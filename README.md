@@ -5,3 +5,5 @@
 2- For every class, compiler automatically creates a default **assignment operator** (operator=) and **copy constructor** (a constructor which can be called with an argument of the same class type).
 
 3- **Conversion Operator** can be used to convert a class type to another type ([reference](https://en.cppreference.com/w/cpp/language/cast_operator)).
+
+4- Casting in C++: https://stackoverflow.com/questions/28002/regular-cast-vs-static-cast-vs-dynamic-cast
