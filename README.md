@@ -19,4 +19,5 @@ Next two points explain construction and destruction of data members:
 7- When an object is cleaned up in C++, first the destructor for the class is called, and then the destructors for all the fields of the class. (If there's inheritance, the base class is then destroyed by recursively following this same procedure.) The destructor code that we write as part of the class implementation is just custom cleanup code that we'd like to do **in addition** to the normal cleanup code for individual data members. In fact, our destructor won't normally do anything to destroy objects contained within the object; what it typically does is destroy objects that are remotely owned.
 
 -----
-5- "int" and "const int&" can not be used as lvalue, but "int&" can.
+- "int" and "const int&" can not be used as lvalue, but "int&" can.
+- copy elision
