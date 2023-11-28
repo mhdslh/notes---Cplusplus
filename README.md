@@ -22,7 +22,7 @@ Next two points explain construction and destruction of data members:
 
 Inheritance and Polymorphism:
 
-9-a) "virtual" **must** be used for the base class function declaration (for the first appearance). In the derived class the function is virtual by way of having the same type as the base class function. Optionally, "virtual" keyword in the derived class ensures that the function is still virtual in the further derived classes. 
+9-a) For polymorphism, "virtual" **must** be used for the base class function declaration (for the first appearance). In the derived class the function is virtual by way of having the same type as the base class function. Optionally, "virtual" keyword in the derived class ensures that the function is still virtual in the further derived classes. 
 
 9-b) "override" ensures that the function is overriding a virtual function from a base class. A compile-time error is generated if this is not true. Without "override", when the function is ill-formed, the closest virtual function in the inheritance hierarchy is called (no compilation error).
 
