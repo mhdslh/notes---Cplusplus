@@ -20,6 +20,14 @@ Next two points explain construction and destruction of data members:
 
 8- When an object is cleaned up in C++, first the destructor for the class is called, and then the destructors for all the fields of the class. (If there's inheritance, the base class is then destroyed by recursively following this same procedure.) The destructor code that we write as part of the class implementation is just custom cleanup code that we'd like to do **in addition** to the normal cleanup code for individual data members. In fact, our destructor won't normally do anything to destroy objects contained within the object; what it typically does is destroy objects that are remotely owned.
 
+Inheritance and Polymorphism:
+
+9-a) "virtual" **must** be used for the base class function declaration (for the first appearance). In the derived class the function is virtual by way of having the same type as the base class function. Optionally, "virtual" keyword in the derived class ensures that the function is still virtual in the further derived classes. 
+
+9-b) "override" ensures that the function is overriding a virtual function from a base class. A compile-time error is generated if this is not true. Without "override", when the function is ill-formed, the closest virtual function in the inheritance hierarchy is called (no compilation error).
+
+9-c) "final" ensures that a virtual memebr function can not be overriden by derived classes. Similarly, "final", in class definition, specifies that no classes can be dervied from this class. 
+
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
 - copy elision
