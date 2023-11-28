@@ -12,11 +12,13 @@ Object-oriented programming:
 
 5- In C++ access control works on per-class basis, not on per-object basis, i.e., objects of the same class have access to each other's private data. This is helpful when implementing copy constructor and assignment operator.
 
+6- Only the member functions or the friend functions are allowed to access the private data members of a class, i.e., class members declared as private are not allowed to be accessed directly by any object or function outside the class. Protected access modifier is similar to that of private access modifiers; the difference is that the class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass (derived class) of that class.
+
 Next two points explain construction and destruction of data members:
 
-6- The default constructor for every member is called before execution reaches the first line in the constructor, unless you explicitly specify a constructor using an initializer list, in which case that constructor is called instead.
+7- The default constructor for every member is called before execution reaches the first line in the constructor, unless you explicitly specify a constructor using an initializer list, in which case that constructor is called instead.
 
-7- When an object is cleaned up in C++, first the destructor for the class is called, and then the destructors for all the fields of the class. (If there's inheritance, the base class is then destroyed by recursively following this same procedure.) The destructor code that we write as part of the class implementation is just custom cleanup code that we'd like to do **in addition** to the normal cleanup code for individual data members. In fact, our destructor won't normally do anything to destroy objects contained within the object; what it typically does is destroy objects that are remotely owned.
+8- When an object is cleaned up in C++, first the destructor for the class is called, and then the destructors for all the fields of the class. (If there's inheritance, the base class is then destroyed by recursively following this same procedure.) The destructor code that we write as part of the class implementation is just custom cleanup code that we'd like to do **in addition** to the normal cleanup code for individual data members. In fact, our destructor won't normally do anything to destroy objects contained within the object; what it typically does is destroy objects that are remotely owned.
 
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
