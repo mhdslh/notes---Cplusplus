@@ -26,7 +26,14 @@ Inheritance and Polymorphism:
 
 9-b) "override" ensures that the function is overriding a virtual function from a base class. A compile-time error is generated if this is not true. Without "override", when the function is ill-formed, the closest virtual function in the inheritance hierarchy is called (no compilation error).
 
-9-c) "final" ensures that a virtual memebr function can not be overriden by derived classes. Similarly, "final", in class definition, specifies that no classes can be dervied from this class. 
+9-c) "final" ensures that a virtual memebr function can not be overriden by derived classes. Similarly, "final", in class definition, specifies that no classes can be dervied from this class.
+
+
+Data Structures:
+- **std::set** stores unique elements following a specific order. "set" containers are generally slower than "std::unordered_set" containers to access individual elements by their key. It is typically implemented as binary search trees.
+- **std::unordered_set** (hash set) stores unique elements in no particular order. Elements in unordered_set containers are organized into buckets depending on their hash values to allow for fast access to individual elements directly by their values.
+- [**std::map**](https://cplusplus.com/reference/map/map/) stores elements formed by a combination of a key value and a mapped value. The elements in a map are always sorted by its key following a specific order. Maps are typically implemented as binary search trees.
+- **std::unordered_map** (hash map) stores elements formed by the combination of a key value and a mapped value
 
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
