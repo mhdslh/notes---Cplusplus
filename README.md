@@ -31,7 +31,7 @@ Inheritance and Polymorphism:
 
 Data Structures:
 - [**std::set**](https://cplusplus.com/reference/set/set/) stores unique elements following a specific order. "set" containers are generally slower than "std::unordered_set" containers to access individual elements by their key. It is typically implemented as binary search trees.
-- **std::unordered_set**(https://cplusplus.com/reference/unordered_set/unordered_set/) (hash set) stores unique elements in no particular order. Elements in unordered_set containers are organized into buckets depending on their hash values to allow for fast access to individual elements directly by their values.
+- [**std::unordered_set**](https://cplusplus.com/reference/unordered_set/unordered_set/) (hash set) stores unique elements in no particular order. Elements in unordered_set containers are organized into buckets depending on their hash values to allow for fast access to individual elements directly by their values.
 - [**std::map**](https://cplusplus.com/reference/map/map/) stores elements formed by a combination of a key value and a mapped value. The elements in a map are always sorted by its key following a specific order. Maps are typically implemented as binary search trees.
 - [**std::unordered_map**](https://cplusplus.com/reference/unordered_map/unordered_map/) (hash map) stores elements formed by the combination of a key value and a mapped value. The elements in the unordered_map are not sorted in any particular order with respect to either their key or mapped values, but organized into buckets depending on their hash values to allow for fast access to individual elements directly by their key values.
 
