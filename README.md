@@ -28,6 +28,11 @@ Inheritance and Polymorphism:
 
 9-c) "final" ensures that a virtual memebr function can not be overriden by derived classes. Similarly, "final", in class definition, specifies that no classes can be dervied from this class.
 
+9-d)  Virtual destructors are useful when you might potentially delete an instance of a derived class through a pointer to the base class. In most implementations, the call to the destructor will be resolved like any non-virtual code, meaning that the destructor of the base class will be called but not the one of the derived class, resulting in a resources leak.
+
+
+9-e) calling a virutal fuction inside the base class (not constructor)
+9-f) = default, = 0, = delete
 
 Data Structures:
 - [std::vector] The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list. 
