@@ -40,8 +40,12 @@ Data Structures:
 - [**std::unordered_set**](https://cplusplus.com/reference/unordered_set/unordered_set/) (hash set) stores unique elements in no particular order. Elements in unordered_set containers are organized into buckets depending on their hash values to allow for fast access to individual elements directly by their values.
 - [**std::map**](https://cplusplus.com/reference/map/map/) stores elements formed by a combination of a key value and a mapped value. The elements in a map are always sorted by its key following a specific order. Maps are typically implemented as binary search trees.
 - [**std::unordered_map**](https://cplusplus.com/reference/unordered_map/unordered_map/) (hash map) stores elements formed by the combination of a key value and a mapped value. The elements in the unordered_map are not sorted in any particular order with respect to either their key or mapped values, but organized into buckets depending on their hash values to allow for fast access to individual elements directly by their key values.
+Remark: Similar performance to an ordered hash map (elements are stored in a specific order with support for fast access to individual elements) can be achieved through using a queue and a hash set together. Queue stores key-value pairs in order, and hash set ensures there is no duplicates. Queue and hash set must be in sync, i.e., queue can't contain two key-value pairs with the same key.
 
-binary search tree???
+- binary search tree
+- erase in hashmap (iterators)
+- = delete, = 0, = default
+
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
 - copy elision
