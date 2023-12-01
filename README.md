@@ -28,11 +28,15 @@ Inheritance and Polymorphism:
 
 9-c) "final" ensures that a virtual memebr function can not be overriden by derived classes. Similarly, "final", in class definition, specifies that no classes can be dervied from this class.
 
-9-d)  Virtual destructors are useful when you might potentially delete an instance of a derived class through a pointer to the base class. In most implementations, the call to the destructor will be resolved like any non-virtual code, meaning that the destructor of the base class will be called but not the one of the derived class, resulting in a resources leak.
+9-d)  **Virtual destructors are useful when you might potentially delete an instance of a derived class through a pointer to the base class. In most implementations, the call to the destructor will be resolved like any non-virtual code, meaning that the destructor of the base class will be called but not the one of the derived class, resulting in a resources leak.**
 
 
 9-e) calling a virutal fuction inside the base class (not constructor)
+
 9-f) = default, = 0, = delete
+- binary search tree
+- erase in hashmap (iterators)
+- = delete, = 0, = default
 
 Data Structures:
 - [std::vector] The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list. 
@@ -41,11 +45,10 @@ Data Structures:
 - [**std::map**](https://cplusplus.com/reference/map/map/) stores elements formed by a combination of a key value and a mapped value. The elements in a map are always sorted by its key following a specific order. Maps are typically implemented as binary search trees.
 - [**std::unordered_map**](https://cplusplus.com/reference/unordered_map/unordered_map/) (hash map) stores elements formed by the combination of a key value and a mapped value. The elements in the unordered_map are not sorted in any particular order with respect to either their key or mapped values, but organized into buckets depending on their hash values to allow for fast access to individual elements directly by their key values.
 
-Remark: Similar performance to an ordered hash map (elements are stored in a specific order with support for fast access to individual elements) can be achieved through using a queue and a hash set together. Queue stores key-value pairs in order, and hash set ensures there is no duplicates. Queue and hash set must be in sync, i.e., queue can't contain two key-value pairs with the same key.
 
-- binary search tree
-- erase in hashmap (iterators)
-- = delete, = 0, = default
+temporary:
+- Similar performance to an ordered hash map (elements are stored in a specific order with support for fast access to individual elements) can be achieved through using a queue and a hash set together. Queue stores key-value pairs in order, and hash set ensures there is no duplicates. Queue and hash set must be in sync, i.e., queue can't contain two key-value pairs with the same key.
+- To check whehter two objects are identical you don't necessarily need to map one to another. you can map both to a third object and then check see if they are equal.
 
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
