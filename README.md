@@ -20,7 +20,7 @@ Next two points explain construction and destruction of data members:
 
 8- When an object is cleaned up in C++, first the destructor for the class is called, and then the destructors for all the fields of the class. (If there's inheritance, the base class is then destroyed by recursively following this same procedure.) The destructor code that we write as part of the class implementation is just custom cleanup code that we'd like to do **in addition** to the normal cleanup code for individual data members. In fact, our destructor won't normally do anything to destroy objects contained within the object; what it typically does is destroy objects that are remotely owned.
 
-Inheritance and Polymorphism:
+Inheritance and Polymorphism (using a single interface to entities of different types):
 
 9-a) For polymorphism, "virtual" **must** be used for the base class function declaration (for the first appearance). In the derived class the function is virtual by way of having the same type as the base class function. Optionally, "virtual" keyword in the derived class ensures that the function is still virtual in the further derived classes. 
 
@@ -31,13 +31,13 @@ Inheritance and Polymorphism:
 9-d)  **Virtual destructors are useful when you might potentially delete an instance of a derived class through a pointer to the base class. In most implementations, the call to the destructor will be resolved like any non-virtual code, meaning that the destructor of the base class will be called but not the one of the derived class, resulting in a resources leak.**
 
 
-9-e) calling a virutal fuction inside the base class (not constructor)
+9-e) With polymorphism, i.e., calling a derived class through a pointer/refrence to its base class, we can only use member functions that are provided by the base class.
 
-9-f) = default, = 0, = delete
-- binary search tree
+9-f) A pure virtual function is declared by assigning "0" to it (i.e., it has no implementation). A class with one pure virtual function is abstract, i.e., no direct object from this class can be created (references or pointers for polymorphism are allowed). We can assign "default" to copy/move constructor or assignment operator to tell the compiler to create the default version of the respective constructor or assignment operator. It's better to let the compiler handle it than to implement it by ourselves. On the contrary, "delete" can be used when we don't want the compiler to generate that function automatically.
+
 - erase in hashmap (iterators)
-- = delete, = 0, = default
-
+- covariance
+  
 Data Structures:
 - [**std::vector**](https://en.cppreference.com/w/cpp/container/vector) The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list (refer to [std::list](https://en.cppreference.com/w/cpp/container/list)).  
 - [**std::set**](https://en.cppreference.com/w/cpp/container/set) stores unique elements following a specific order. "set" containers are generally slower than "std::unordered_set" containers to access individual elements by their key. It is typically implemented as binary search trees.
@@ -45,11 +45,8 @@ Data Structures:
 - [**std::map**](https://en.cppreference.com/w/cpp/container/map) stores elements formed by a combination of a key value and a mapped value. The elements in a map are always sorted by its key following a specific order. Maps are typically implemented as binary search trees.
 - [**std::unordered_map**](https://en.cppreference.com/w/cpp/container/unordered_map) (hash map) stores elements formed by the combination of a key value and a mapped value. The elements in the unordered_map are not sorted in any particular order with respect to either their key or mapped values, but organized into buckets depending on their hash values to allow for fast access to individual elements directly by their key values.
 
-- Most of the binary search tree (BST) operations (e.g., search, insert, delete etc.) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) (i.e., linear) for a skewed Binary tree. If we make sure that the height of the tree remains O(log(n)) after every insertion and deletion, then we can guarantee an upper bound of O(log(n)) for all these operations. With n denoting the number of nodes in the tree, the height of Red-Black tree is always less than 2log2(n+1), and the height of an AVL tree is always 1.44log2(n). Therefore, AVL tree is more balanced; however, AVL trees are more expensive at insertion and deletetion (to rotate the tree to meet the required properties). std::set and std::map in C++ are usually implemented as Red-Black trees.    
-
-temporary:
-- Similar performance to an ordered hash map (elements are stored in a specific order with support for fast access to individual elements) can be achieved through using a queue and a hash set together. Queue stores key-value pairs in order, and hash set ensures there is no duplicates. Queue and hash set must be in sync, i.e., queue can't contain two key-value pairs with the same key.
-- To check whehter two objects are identical you don't necessarily need to map one to another. you can map both to a third object and then check see if they are equal. B-tree is a self-balancing tree data structure that allows nodes to store more than one key and have number of keys plus 1 children. This provides a shallower height, and less disk I/O as a result. B-Trees are particularly well suited for storage systems that have slow bulky data access such as hard drives, flash memory, and CD-ROMs.
+- Most of the binary search tree (BST) operations (e.g., search, insert, delete etc.) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) (i.e., linear) for a skewed Binary tree. If we make sure that the height of the tree remains O(log(n)) after every insertion and deletion, then we can guarantee an upper bound of O(log(n)) for all these operations. With n denoting the number of nodes in the tree, the height of Red-Black tree is always less than 2log2(n+1), and the height of an AVL tree is always 1.44log2(n). Therefore, AVL tree is more balanced; however, AVL trees are more expensive at insertion and deletetion (to rotate the tree to meet the required properties). std::set and std::map in C++ are usually implemented as Red-Black trees. B-tree is a self-balancing tree data structure that allows nodes to store more than one key and have number of keys plus 1 children. This provides a shallower height, and less disk I/O as a result. B-Trees are particularly well suited for storage systems that have slow bulky data access such as hard drives, flash memory, and CD-ROMs.
+- ordered hash map = hash set + queue (must be in sync)
 
 -----
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
