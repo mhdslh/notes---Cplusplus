@@ -38,6 +38,8 @@ Inheritance and Polymorphism (using a single interface to entities of different 
 9-g) From software architecture point of view, composition with dependency injection seems better that direct inheritance (more flexibility and scalability).
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/077bdeba-9053-4cbf-ad7c-5de5dfdcdef6)
 
+10- Lambda expressions and function objects
+
 
   
 Data Structures:
