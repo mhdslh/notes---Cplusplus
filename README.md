@@ -35,8 +35,9 @@ Inheritance and Polymorphism (using a single interface to entities of different 
 
 9-f) A pure virtual function is declared by assigning "0" to it (i.e., it has no implementation). A class with one pure virtual function is abstract, i.e., no direct object from this class can be created (references or pointers for polymorphism are allowed). We can assign "default" to copy/move constructor or assignment operator to tell the compiler to create the default version of the respective constructor or assignment operator. It's better to let the compiler handle it than to implement it by ourselves. On the contrary, "delete" can be used when we don't want the compiler to generate that function automatically.
 
-- erase in hashmap (iterators)
-- covariance
+9-g) From software architecture point of view, composition with dependency injection seems better that direct inheritance (more flexibility and scalability)
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/4fc7ce2b-eeba-4f79-b74b-ad5d8b2c87f4)
+
   
 Data Structures:
 - [**std::vector**](https://en.cppreference.com/w/cpp/container/vector) The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list (refer to [std::list](https://en.cppreference.com/w/cpp/container/list)).  
@@ -49,5 +50,7 @@ Data Structures:
 - ordered hash map = hash set + queue (must be in sync)
 
 -----
+- erase in hashmap (iterators)
+- covariance
 - "int" and "const int&" can not be used as lvalue, but "int&" can.
 - copy elision
