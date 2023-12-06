@@ -52,7 +52,9 @@ Data Structures:
 - Most of the binary search tree (BST) operations (e.g., search, insert, delete etc.) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) (i.e., linear) for a skewed Binary tree. If we make sure that the height of the tree remains O(log(n)) after every insertion and deletion, then we can guarantee an upper bound of O(log(n)) for all these operations. With n denoting the number of nodes in the tree, the height of Red-Black tree is always less than 2log2(n+1), and the height of an AVL tree is always 1.44log2(n). Therefore, AVL tree is more balanced; however, AVL trees are more expensive at insertion and deletetion (to rotate the tree to meet the required properties). std::set and std::map in C++ are usually implemented as Red-Black trees. B-tree is a self-balancing tree data structure that allows nodes to store more than one key and have number of keys plus 1 children. This provides a shallower height, and less disk I/O as a result. B-Trees are particularly well suited for storage systems that have slow bulky data access such as hard drives, flash memory, and CD-ROMs.
 - ordered hash map = hash set + queue (must be in sync)
 
-- representation of tree with lambda expression
+- A tree can be represented as '(representation of the left subtree) root.val (representation of the right subtree)'.
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/64a2219a-720d-4f62-8839-7adf77aaff36)
+
 
 -----
 - erase in hashmap (iterators)
