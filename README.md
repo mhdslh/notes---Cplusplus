@@ -55,6 +55,7 @@ Data Structures:
 - A tree can be represented as `(representation of the left subtree) root.val (representation of the right subtree)`.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/64a2219a-720d-4f62-8839-7adf77aaff36)
 
+- Heap
 
 -----
 - erase in hashmap (iterators)
