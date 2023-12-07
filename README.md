@@ -41,7 +41,6 @@ Inheritance and Polymorphism (using a single interface to entities of different 
 10- string_view (`usgin string_view = std::basic_string_view<char>`) refers to a constant contiguous sequence of char (e.g., a string_literal(C style string) or string class object). A typical implementation of string_view holds only two members: a pointer to **constant** char (thus can not modify the data) and a size. string_view does not own the data. As a result, if the original data gets modified, this will be reflected in the string_view object as well. 
 
 Note that when using auto keyword the inferred type of a string literal **"*char-seq*"** is const char*; to make it a string we must use string object literals **"*char-seq*"s** as in the example below. To use string object literals we need `using namespace std::literals;`.
-![image](https://github.com/mhdslh/notes---C-/assets/61638154/171bba94-5cf7-461f-85fb-e4f61ab99956 = 100x100)
 <img src="https://github.com/mhdslh/notes---C-/assets/61638154/171bba94-5cf7-461f-85fb-e4f61ab99956" width="50%" height="50%">
 
 11- unique_ptr, shared_ptr, weak_ptr
