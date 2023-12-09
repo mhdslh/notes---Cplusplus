@@ -61,6 +61,8 @@ Data Structures:
 - A tree can be represented as `(representation of the left subtree) root.val (representation of the right subtree)`.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/64a2219a-720d-4f62-8839-7adf77aaff36)
 
+- Singly-linked list ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/forward_list)) and Doubly-linked list  ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/list)):
+
 - Heap with priority queue
 
 -----
