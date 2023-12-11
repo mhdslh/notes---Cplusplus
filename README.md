@@ -44,8 +44,10 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/171bba94-5cf7-461f-85fb-e4f61ab99956)
 
 11- unique_ptr, shared_ptr, weak_ptr
+12- Copy constructor, move constructor, copy assignment, move assignment, "{}" operator overloading (member initializing list), pre and post increment operator overloading
+13- move semantics, lvalue, rvalue, lvalue&, rvalue&, lvalue&&, rvalue&&  
 
-12- Lambda expressions and function objects
+14- Lambda expressions and function objects
 
   
 Data Structures:
