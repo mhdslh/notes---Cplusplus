@@ -44,8 +44,12 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/171bba94-5cf7-461f-85fb-e4f61ab99956)
 
 11- unique_ptr, shared_ptr, weak_ptr
+
 12- Copy constructor, move constructor, copy assignment, move assignment, "{}" operator overloading (member initializing list), pre and post increment operator overloading
-13- move semantics, lvalue, rvalue, lvalue&, rvalue&, lvalue&&, rvalue&&  
+
+13- **l-value** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **r-value** has no identifiable location in memory. A **reference** variable is an alias, i.e., another name for an already existing variable. Once a reference is initialized with a variable, either the variable name or the reference name may be used to refer to the underlying object ([reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references)). A reference is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Trying to do so copies/moves (?) the value of the new object to the original object.
+
+move semantics, lvalue, rvalue, lvalue&, rvalue&, lvalue&&, rvalue&&  
 
 14- Lambda expressions and function objects
 
