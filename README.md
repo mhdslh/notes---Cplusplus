@@ -53,6 +53,10 @@ move semantics, lvalue, rvalue, lvalue&, rvalue&, lvalue&&, rvalue&&
 
 14- Lambda expressions and function objects
 
+15- multi inheritance
+16- 
+  boost::fibers::SynchExecutor<void> executor;
+  boost::fibers::algo::SetSchedPolicy();
   
 Data Structures:
 - [**std::vector**](https://en.cppreference.com/w/cpp/container/vector) The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list (refer to [std::list](https://en.cppreference.com/w/cpp/container/list)).  
