@@ -45,11 +45,17 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 
 11- unique_ptr, shared_ptr, weak_ptr
 
-12, 13- **l-value** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **r-value** has no identifiable location in memory. Reference declaration declares a named variable as a reference, that is, an alias to an already-existing object ([reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references)). A reference is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Doing so modifies the original object based on the new object.
-**l-value references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
-**r-value references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable). When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues.
+12- **lvalue** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **rvalue** refers to a temporary object (**prvalue** has no identifiable location in memory, but **xvalue** represents an object whose resources can be 'moved' or reused). **glvalue** (Generalized lvalue) includes both lvalues (objects with a distinct identity and location) and xvalues. An xvalue is considered a glvalue because it refers to an object, albeit an object that is in a state where its resources are about to be reused or moved. This means that an xvalue has an identity, like an lvalue, but is also in a state where it can be treated like a temporary or movable object, similar to **rvalue** objetcs.
 
 <img src="https://github.com/mhdslh/notes---C-/assets/61638154/8b669a66-5e32-46a6-a2fc-0c855c7032d3" width=40% height=40%>
+
+A [reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references) is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Doing so modifies the original object based on the new object.
+**lvalue references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
+**rvalue references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable).
+
+When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues. This allows move constructors, move assignment operators, and other move-aware functions (e.g. std::vector::push_back()) to be automatically selected when suitable.
+
+The std::move function is a standard library utility that converts its argument into an rvalue reference, specifically an xvalue. This conversion signals that the resources held by the argument can be moved. When you pass an object to std::move, it is cast to an rvalue reference. This casting doesn't actually move anything by itself; it just enables the move operation. This rvalue reference is typically an xvalue, indicating that the resources of the object can be moved. In the presence of an rvalue reference (particularly an xvalue), the compiler can choose to invoke move constructors or move assignment operators of objects
 
 Class T {\
 public:\
@@ -59,8 +65,8 @@ public:\
     T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)\
     T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)\
     T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)\
-    ~T()                                              // destructor
-};\
+    ~T()                                              // destructor\
+};
 
 15- Lambda expressions and function objects
 
