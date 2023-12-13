@@ -51,13 +51,13 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 
 Class T {\
 public:
-  T()                                               // default constructor: constructor that can be called with no arguments\
-  T(*single-parameter*)                             // conversion constructor: contructor that can be called with one argument\
-  T(T&)             , T(const T&)             , ... // [copy constructor](https://en.cppreference.com/w/cpp/language/copy_constructor)\
-  T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)\
-  T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)\
-  T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)\
-  ~T()                                              // destructor\
+    T()                                               // default constructor: constructor that can be called with no arguments\
+    T(*single-parameter*)                             // conversion constructor: contructor that can be called with one argument\
+    T(T&)             , T(const T&)             , ... // [copy constructor](https://en.cppreference.com/w/cpp/language/copy_constructor)\
+    T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)\
+    T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)\
+    T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)\
+    ~T()                                              // destructor
 };\
 
 15- Lambda expressions and function objects
