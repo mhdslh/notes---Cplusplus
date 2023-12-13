@@ -45,16 +45,26 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 
 11- unique_ptr, shared_ptr, weak_ptr
 
-12- Copy constructor, move constructor, copy assignment, move assignment, "{}" operator overloading (member initializing list), pre and post increment operator overloading
+12, 13- **l-value** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **r-value** has no identifiable location in memory. Reference declaration declares a named variable as a reference, that is, an alias to an already-existing object ([reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references)). A reference is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Doing so modifies the original object based on the new object.
+**l-value references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
+**r-value references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable). When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues.
 
-13- **l-value** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **r-value** has no identifiable location in memory. A **reference** variable is an alias, i.e., another name for an already existing variable. Once a reference is initialized with a variable, either the variable name or the reference name may be used to refer to the underlying object ([reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references)). A reference is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Trying to do so copies/moves (?) the value of the new object to the original object.
+Class T {
+public:
+  T()                                               // default constructor: constructor that can be called with no arguments
+  T(*single-parameter*)                             // conversion constructor: contructor that can be called with one argument
+  T(T&)             , T(const T&)             , ... // [copy constructor](https://en.cppreference.com/w/cpp/language/copy_constructor)
+  T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)
+  T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)
+  T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)
+  ~T()                                              // destructor
+};
 
-move semantics, lvalue, rvalue, lvalue&, rvalue&, lvalue&&, rvalue&&  
+15- Lambda expressions and function objects
 
-14- Lambda expressions and function objects
-
-15- multi inheritance
-16- 
+16- multi inheritance
+17- 
+  niceness
   boost::fibers::SynchExecutor<void> executor;
   boost::fibers::algo::SetSchedPolicy();
   
