@@ -50,8 +50,8 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 <img src="https://github.com/mhdslh/notes---C-/assets/61638154/8b669a66-5e32-46a6-a2fc-0c855c7032d3" width=40% height=40%>
 
 A [reference](https://en.cppreference.com/w/cpp/language/reference#Lvalue_references) is required to be initialized at the time of declaration. Once initialized, a reference cannot be reseated (changed) to refer to another object. Doing so modifies the original object based on the new object.
-**lvalue references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
-**rvalue references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable).
+- **lvalue references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
+- **rvalue references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable).
 
 When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues. This allows move constructors, move assignment operators, and other move-aware functions (e.g. std::vector::push_back()) to be automatically selected when suitable.
 
