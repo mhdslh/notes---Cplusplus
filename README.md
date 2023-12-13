@@ -49,16 +49,16 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 **l-value references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
 **r-value references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable). When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues.
 
-Class T {
+Class T {\
 public:
-  T()                                               // default constructor: constructor that can be called with no arguments
-  T(*single-parameter*)                             // conversion constructor: contructor that can be called with one argument
-  T(T&)             , T(const T&)             , ... // [copy constructor](https://en.cppreference.com/w/cpp/language/copy_constructor)
-  T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)
-  T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)
-  T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)
-  ~T()                                              // destructor
-};
+  T()                                               // default constructor: constructor that can be called with no arguments\
+  T(*single-parameter*)                             // conversion constructor: contructor that can be called with one argument\
+  T(T&)             , T(const T&)             , ... // [copy constructor](https://en.cppreference.com/w/cpp/language/copy_constructor)\
+  T(T&&)            , T(const T&&)            , ... // [move constructor](https://en.cppreference.com/w/cpp/language/move_constructor)\
+  T& operator=(T&)  , T& operator=(const T&)  , ... // [copy assignment](https://en.cppreference.com/w/cpp/language/copy_assignment)\
+  T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)\
+  ~T()                                              // destructor\
+};\
 
 15- Lambda expressions and function objects
 
