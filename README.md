@@ -49,6 +49,9 @@ Note that when using auto keyword the inferred type of a string literal **"*char
 **l-value references** (`S& D`) can be used to 1) alias an existing object, 2) implement pass-by-reference semantics, 3) use function call expression as an lvalue when the function's return type is lvalue reference.
 **r-value references** (`S&& D`) can be used to extend the lifetimes of temporary objects (same can be achieved by const l-value references; however, they are not modifiable). When a function has both rvalue reference and lvalue reference overloads, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues.
 
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/6ae5d315-ab74-4f71-b9cd-0679acbc2c81)
+
+
 Class T {\
 public:\
     T()                                               // default constructor: constructor that can be called with no arguments\
