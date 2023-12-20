@@ -43,9 +43,7 @@ Inheritance and Polymorphism (using a single interface to entities of different 
 Note that when using auto keyword the inferred type of a string literal **"*char-seq*"** is const char*; to make it a string we must use string object literals **"*char-seq*"s** as in the example below. To use string object literals we need `using namespace std::literals;`.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/171bba94-5cf7-461f-85fb-e4f61ab99956)
 
-11- unique_ptr, shared_ptr, weak_ptr
-
-12- **lvalue** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **rvalue** refers to a temporary object (**prvalue** has no identifiable location in memory, but **xvalue** represents an object whose resources can be 'moved' or reused). **glvalue** (Generalized lvalue) includes both lvalues (objects with a distinct identity and location) and xvalues. An xvalue is considered a glvalue because it refers to an object, albeit an object that is in a state where its resources are about to be reused or moved. This means that an xvalue has an identity, like an lvalue, but is also in a state where it can be treated like a temporary or movable object, similar to an rvalue.
+11- **lvalue** refers to a memory location that identifies an object (identifier). Expressions referring to modifiable locations are called "modifiable l-values". On the other hand, **rvalue** refers to a temporary object (**prvalue** has no identifiable location in memory, but **xvalue** represents an object whose resources can be 'moved' or reused). **glvalue** (Generalized lvalue) includes both lvalues (objects with a distinct identity and location) and xvalues. An xvalue is considered a glvalue because it refers to an object, albeit an object that is in a state where its resources are about to be reused or moved. This means that an xvalue has an identity, like an lvalue, but is also in a state where it can be treated like a temporary or movable object, similar to an rvalue.
 
 <img src="https://github.com/mhdslh/notes---C-/assets/61638154/8b669a66-5e32-46a6-a2fc-0c855c7032d3" width=40% height=40%>
 
@@ -67,6 +65,12 @@ public:\
     T& operator=(T&&) , T& operator=(const T&&) , ... // [move assignment](https://en.cppreference.com/w/cpp/language/move_assignment)\
     ~T()                                              // destructor\
 };
+
+12- unique_ptr, shared_ptr, weak_ptr
+
+13- **RAII (Resource Acquisition Is Initialization)** and **Rule of Zero**: RAII involves wrapping resources into classes, where the resource is acquired in the constructor and released in the destructor. This ensures that resources are properly released when the object goes out of scope, reducing memory leaks and other resource management errors. 
+
+When we invoke one of the five special member functions (constructor, destructor, copy constructor, copy assignment operator, and move assignment operator) on a class, the corresponding special member function for each of its composed (non-static member) objects is also called. When a class is only composed of RAII objects and no other resources and its special member function is called, the corresponding member function of those RAII member objects are automatically invoked. This ensures proper resource management. As a result, there is no need for custom special member functions and the default implementations provided by the compiler are sufficient. The "Rule of Zero" suggests that classes should avoid custom destructors, copy/move constructors, and copy/move assignment operators. Instead, they should use existing classes that follow the RAII principle to manage resources.
 
 15- Lambda expressions and function objects
 
