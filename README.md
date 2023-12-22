@@ -100,7 +100,7 @@ Data Structures:
 
 - Queue (FIFO) and Stack (LIFO): queue can be applied in Breadth-first Search (BFS) algorithms \
 [std::queue](https://en.cppreference.com/w/cpp/container/queue)\
-[std::deque](https://en.cppreference.com/w/cpp/container/deque): indexed sequence container that allows fast insertion and deletion at both its beginning and its end. As opposed to std::vector, the elements of a deque are not stored contiguously: typical implementations use a sequence of individually allocated fixed-size arrays, with additional bookkeeping, which means indexed access to deque must perform two pointer dereferences.
+[std::deque](https://en.cppreference.com/w/cpp/container/deque): indexed sequence container that allows fast insertion and deletion at both its beginning and its end. As opposed to std::vector, the elements of a deque are not stored contiguously: typical implementations use a sequence of individually allocated fixed-size arrays, with additional bookkeeping, which means indexed access to deque must perform two pointer dereferences.\
 [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue) provides constant time lookup of the largest (by default) element (Note that because the priority queue outputs largest elements first, the elements that "come before", according to the ordering imposed by Compare,  are actually output last)\
 [std::stack](https://en.cppreference.com/w/cpp/container/stack)
 
