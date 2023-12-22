@@ -80,7 +80,9 @@ When we invoke one of the five special member functions (constructor, destructor
   niceness
   boost::fibers::SynchExecutor<void> executor;
   boost::fibers::algo::SetSchedPolicy();
-  
+
+
+---
 Data Structures:
 - [**std::vector**](https://en.cppreference.com/w/cpp/container/vector) The elements of a vector are stored contiguously, i.e., vector is not implemented as a linked list (refer to [std::list](https://en.cppreference.com/w/cpp/container/list)).  
 - [**std::set**](https://en.cppreference.com/w/cpp/container/set) stores unique elements following a specific order. "set" containers are generally slower than "std::unordered_set" containers to access individual elements by their key. It is typically implemented as binary search trees.
@@ -95,6 +97,12 @@ Data Structures:
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/64a2219a-720d-4f62-8839-7adf77aaff36)
 
 - Singly-linked list ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/forward_list)) and Doubly-linked list  ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/list)):
+
+- Queue (FIFO) and Stack (LIFO): queue can be applied in Breadth-first Search (BFS) algorithms \
+[std::queue](https://en.cppreference.com/w/cpp/container/queue)\
+[std::deque](https://en.cppreference.com/w/cpp/container/deque): indexed sequence container that allows fast insertion and deletion at both its beginning and its end. As opposed to std::vector, the elements of a deque are not stored contiguously: typical implementations use a sequence of individually allocated fixed-size arrays, with additional bookkeeping, which means indexed access to deque must perform two pointer dereferences.
+[std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue) provides constant time lookup of the largest (by default) element (Note that because the priority queue outputs largest elements first, the elements that "come before", according to the ordering imposed by Compare,  are actually output last)\
+[std::stack](https://en.cppreference.com/w/cpp/container/stack)
 
 - Heap with priority queue
 
