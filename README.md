@@ -72,6 +72,15 @@ public:\
 
 When we invoke one of the five special member functions (constructor, destructor, copy constructor, copy assignment operator, and move assignment operator) on a class, the corresponding special member function for each of its composed (non-static member) objects is also called. When a class is only composed of RAII objects and no other resources and its special member function is called, the corresponding member function of those RAII member objects are automatically invoked. This ensures proper resource management. As a result, there is no need for custom special member functions and the default implementations provided by the compiler are sufficient. The "Rule of Zero" suggests that classes should avoid custom destructors, copy/move constructors, and copy/move assignment operators. Instead, they should use existing classes that follow the RAII principle to manage resources.
 
+14- Containers:
+- **sequence containers**: array, vector, deque, list (doubly-linked list), forward-list (singly-linked list)
+- **ordered associative containers**: set, multiset, map, multimap (implemented by binary search trees)
+- **unordered associative containers**: unordered-set , unordered-multiset, unordered-map, unordered-multimap (implemented by hash functions)
+
+To use a container, its elements’ type must meet a minimum certain requirements, e.g., CopyConstructible, MoveConstructible, CopyAssignable, MoveAssignable, EqualityComparable, etc. (for more information refer to this [link](https://en.cppreference.com/w/cpp/named_req)). Moreover, each container supports a [catergory of iterators](https://en.cppreference.com/w/cpp/iterator) from which we can choose the right algorithms to work with the container.
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/7fde2041-36fe-4d40-933b-75075cac2f79)
+
+
 15- Lambda expressions and function objects
 
 16- multi inheritance
