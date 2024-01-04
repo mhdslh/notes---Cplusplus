@@ -108,13 +108,15 @@ Data Structures:
 
 - Singly-linked list ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/forward_list)) and Doubly-linked list  ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/list)):
 
-- Queue (FIFO) and Stack (LIFO): queue can be applied in Breadth-first Search (BFS) algorithms \
+- Queue (FIFO) and Stack (LIFO):\
 [std::queue](https://en.cppreference.com/w/cpp/container/queue)\
 [std::deque](https://en.cppreference.com/w/cpp/container/deque): indexed sequence container that allows fast insertion and deletion at both its beginning and its end. As opposed to std::vector, the elements of a deque are not stored contiguously: typical implementations use a sequence of individually allocated fixed-size arrays, with additional bookkeeping, which means indexed access to deque must perform two pointer dereferences.\
 [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue) provides constant time lookup of the largest (by default) element (Note that because the priority queue outputs largest elements first, the elements that "come before", according to the ordering imposed by Compare,  are actually output last)\
 [std::stack](https://en.cppreference.com/w/cpp/container/stack)
 
 - Heap with priority queue
+  
+- Breadth-first Search (BFS) algorithms can be used to traverse or search in data structures like trees or graphs. Queue is used in implementing BFS algorithms.
 
 -----
 - erase in hashmap (iterators)
