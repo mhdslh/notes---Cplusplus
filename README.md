@@ -76,6 +76,7 @@ When we invoke one of the five special member functions (constructor, destructor
 - **sequence containers**: array, vector, deque, list (doubly-linked list), forward-list (singly-linked list)
 - **ordered associative containers**: set, multiset, map, multimap (implemented by binary search trees)
 - **unordered associative containers**: unordered-set , unordered-multiset, unordered-map, unordered-multimap (implemented by hash functions)
+- **container adaptors**: stack, queue, priority_queue
 
 To use a container, its elements’ type must meet a minimum certain requirements, e.g., CopyConstructible, MoveConstructible, CopyAssignable, MoveAssignable, EqualityComparable, etc. (for more information refer to this [link](https://en.cppreference.com/w/cpp/named_req)). Moreover, each container supports a [catergory of iterators](https://en.cppreference.com/w/cpp/iterator) from which we can choose the right algorithms to work with the container.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/7fde2041-36fe-4d40-933b-75075cac2f79)
