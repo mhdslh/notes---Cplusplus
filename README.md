@@ -116,7 +116,7 @@ Data Structures:
 
 - Heap with priority queue
   
-- Breadth-first Search (BFS) algorithms can be used to traverse or search in data structures like trees or graphs. Queue is used in implementing BFS algorithms.
+- Breadth-first Search (BFS) and Depth-first Search (DFS) algorithms can be used to traverse or search in data structures like trees or graphs. Queue is used in implementing BFS algorithms, and Stack is used in implementing DFS algorithms.
 
 -----
 - erase in hashmap (iterators)
