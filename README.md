@@ -81,8 +81,9 @@ When we invoke one of the five special member functions (constructor, destructor
 To use a container, its elements’ type must meet a minimum certain requirements, e.g., CopyConstructible, MoveConstructible, CopyAssignable, MoveAssignable, EqualityComparable, etc. (for more information refer to this [link](https://en.cppreference.com/w/cpp/named_req)). Moreover, each container supports a [catergory of iterators](https://en.cppreference.com/w/cpp/iterator) from which we can choose the right algorithms to work with the container.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/7fde2041-36fe-4d40-933b-75075cac2f79)
 
-
 15- Lambda expressions and function objects
+
+16- structure binding
 
 16- multi inheritance
 
@@ -113,10 +114,10 @@ Data Structures:
 [std::deque](https://en.cppreference.com/w/cpp/container/deque): indexed sequence container that allows fast insertion and deletion at both its beginning and its end. As opposed to std::vector, the elements of a deque are not stored contiguously: typical implementations use a sequence of individually allocated fixed-size arrays, with additional bookkeeping, which means indexed access to deque must perform two pointer dereferences.\
 [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue) provides constant time lookup of the largest (by default) element (Note that because the priority queue outputs largest elements first, the elements that "come before", according to the ordering imposed by Compare,  are actually output last)\
 [std::stack](https://en.cppreference.com/w/cpp/container/stack)
-
-- Heap with priority queue
   
 - Breadth-first Search (BFS) and Depth-first Search (DFS) algorithms can be used to traverse or search in data structures like trees or graphs. Queue is used in implementing BFS algorithms, and Stack is used in implementing DFS algorithms.
+
+- Heap with priority queue and priority queue with heap
 
 -----
 - erase in hashmap (iterators)
