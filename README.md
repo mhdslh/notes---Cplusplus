@@ -81,9 +81,11 @@ When we invoke one of the five special member functions (constructor, destructor
 To use a container, its elements’ type must meet a minimum certain requirements, e.g., CopyConstructible, MoveConstructible, CopyAssignable, MoveAssignable, EqualityComparable, etc. (for more information refer to this [link](https://en.cppreference.com/w/cpp/named_req)). Moreover, each container supports a [catergory of iterators](https://en.cppreference.com/w/cpp/iterator) from which we can choose the right algorithms to work with the container.
 ![image](https://github.com/mhdslh/notes---C-/assets/61638154/7fde2041-36fe-4d40-933b-75075cac2f79)
 
-15- Lambda expressions and function objects
+15- A function object is any object for which the function call operator (operator()) is defined. When defining lambda functions (having format '[ capture_clause ] (parameters) -> return_type { body }'), compiler automatically generates an anonymous class behind the scenes with operator() overloaded and captured variables, in the lambda expression, stored as member variables in the generated class. The lambda expression is effectively an instance of this class, i.e., lambdas are implemented as function objects. Projection concept in std::ranges algorithms is a function or a callable object that transforms elements of a range into another form before they are processed by an algorithm. This allows algorithms to operate not directly on the elements of the range, but on a certain aspect or property of these elements ([similar to projection in mathematics](https://mathworld.wolfram.com/Projection.html)). Projection can be combined with built-in function objections to support more use cases.
 
-16- structure binding
+16- Structure binding, introduced in C++17, simplifies unpacking elements from tuples, pairs, arrays, and structures. As an example: \\
+    std::pair<int, std::string> p{1, "Hello"}; \\
+    auto [number, text] = p;
 
 16- multi inheritance
 
