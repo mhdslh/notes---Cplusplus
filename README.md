@@ -90,9 +90,12 @@ To use a container, its elements’ type must meet a minimum certain requirement
 std::pair<int, std::string> p{1, "Hello"}; <br>
 auto [number, text] = p;
 
-18- multi inheritance
+18-a) - Templates - Example1:
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/a6db85ac-3aac-483e-a505-2a98c6efdfa8)
 
-19- 
+19- multi inheritance
+
+20- 
   niceness
   boost::fibers::SynchExecutor<void> executor;
   boost::fibers::algo::SetSchedPolicy();
