@@ -90,8 +90,9 @@ To use a container, its elements’ type must meet a minimum certain requirement
 std::pair<int, std::string> p{1, "Hello"}; <br>
 auto [number, text] = p;
 
-18-a) - Templates - Example1:
-![image](https://github.com/mhdslh/notes---C-/assets/61638154/a6db85ac-3aac-483e-a505-2a98c6efdfa8)
+18-a) - Templates:
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/173acabc-3e41-4ac8-a6e5-e56d708b9a99)
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/7c536bcd-36e7-4a5d-9f3b-2ba5b73981bb)
 
 19- multi inheritance
 
