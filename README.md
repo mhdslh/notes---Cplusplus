@@ -85,7 +85,7 @@ To use a container, its elements’ type must meet a minimum certain requirement
 
 16- A function object is any object for which the function call operator (operator()) is defined. When defining lambda functions (having format '[ capture_clause ] (parameters) -> return_type { body }'), compiler automatically generates an anonymous class behind the scenes with operator() overloaded and captured variables, in the lambda expression, stored as member variables in the generated class. The lambda expression is effectively an instance of this class, i.e., lambdas are implemented as function objects. Projection concept in std::ranges algorithms is a function or a callable object that transforms elements of a range into another form before they are processed by an algorithm. This allows algorithms to operate not directly on the elements of the range, but on a certain aspect or property of these elements ([similar to projection in mathematics](https://mathworld.wolfram.com/Projection.html)). Projection can be combined with built-in function objections to support more use cases. 
 
-![image](https://github.com/mhdslh/notes---C-/assets/61638154/6d6fea0a-c345-4621-a146-8f3272c3096c)
+![image](https://github.com/mhdslh/notes---C-/assets/61638154/87381430-e516-4c9f-ac6e-eaa214d53a88)
 
 17- Structure binding, introduced in C++17, simplifies unpacking elements from tuples, pairs, arrays, and structures. As an example: <br>
 
