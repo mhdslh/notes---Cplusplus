@@ -143,6 +143,8 @@ Disjoint set does not modify its structure when connecting two vertices that are
 
 -  A **spanning tree** is a connected subgraph in an undirected graph where all vertices are connected with the minimum number of edges. A **minimum spanning tree** is a spanning tree with the minimum possible total edge weight in a weighted undirected graph. Minimum spanning tree can be constructed using Kruskal’s Algorithm and Prim’s algorithm. In Kruskal’s Algorithm, 1) we sort all edges by their weight in ascending order 2) loop through the sorted list and pick an edge if adding it to the selected edges does not create a cycle 3) continue untill V-1 edges are selected, where V denotes the number of vertices. Note that for step 2 we can use disjoint set data structure to avoid selecting an edge that connects two already connected vertices ,i.e., creating a cycle in the spanning tree.
 
+- BFS algorithm can only solve the shortest path problem in unweighted graphs. To find the shortest path in a weighted graph, we can use I) Dijkstra’s algorithm II) Bellman-Ford algorithm. Dijkstra’s algorithm can only be used for weighted directed graphs with non-negative weights. On the other hand, Bellman-Ford algorithm is suitable for weighted directed graph with any weights, including, of course, negative weights.
+
 - Heap with priority queue and priority queue with heap
 
 -----
