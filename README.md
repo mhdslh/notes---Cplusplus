@@ -138,7 +138,8 @@ Data Structures:
 
 - Given a graph, **disjoint set** (also called **union-find**) data structure can quickly check whether two vertices are connected or not. Note that the aim is to check the connectivity; hence, it does not store the exact graph topology. Below implementation of Disjoint Set uses "Union by Rank" and "Path Compression" for efficiency.
 ![image](https://github.com/mhdslh/notes---Cplusplus/assets/61638154/893fbd8d-79e2-48f1-bdc0-f8ff222482ab)
-**Disjoint Set** does not modify its structure when connecting two vertices that are already connected, i.e., have the same root. This can be used to check if the graph is a tree or not, i.e., has a cycle or not.
+
+Disjoint set does not modify its structure when connecting two vertices that are already connected, i.e., have the same root. This can be used to check if the graph is a tree or not, i.e., has a cycle or not.
 
 -  A **spanning tree** is a connected subgraph in an undirected graph where all vertices are connected with the minimum number of edges. A **minimum spanning tree** is a spanning tree with the minimum possible total edge weight in a weighted undirected graph. Minimum spanning tree can be constructed using Kruskal’s Algorithm and Prim’s algorithm. In Kruskal’s Algorithm, 1) we sort all edges by their weight in ascending order 2) loop through the sorted list and pick an edge if adding it to the selected edges does not create a cycle 3) continue untill V-1 edges are selected, where V denotes the number of vertices. Note that for step 2 we can use disjoint set data structure to avoid selecting an edge that connects two vertices that are already connected.
 
