@@ -145,6 +145,10 @@ Disjoint set does not modify its structure when connecting two vertices that are
 
 - BFS algorithm can only solve the shortest path problem in unweighted graphs. To find the shortest path in a weighted graph, we can use I) Dijkstra’s algorithm II) Bellman-Ford algorithm. Dijkstra’s algorithm can only be used for weighted directed graphs with non-negative weights. On the other hand, Bellman-Ford algorithm is suitable for weighted directed graph with any weights, including, of course, negative weights. Note that, in a graph with negative weight cycle, there is no shortest path. In Dijkstra, we start from the source and update shortest distances to its immediate neighbors. Then, select the next node with the shortest distance (greedy selection) and repeate until there is no more nodes. Bellman-Ford algorithm is based on dynamic programming, where shortest distance to node v using at most k edges is "ShortestDistance(v, k) = min { ShortestDistance(u, k-1) + edge(u, v) } forall u". Bellman-Ford algorithm can be improved by using a queue to maintain the next starting vertex of the edge to be traversed. Only when the shortest distance of a vertex is relaxed (i.e., when there is a chance to find a shorter path to other vertices from this vertex) and that the vertex is not in the queue (i.e., the vertex is not marked to be visited), we add the vertex to the queue. We iterate the process until the queue is empty. Note that, in the improved version some vertices may be updated more often than the others. Bellman-Ford algorithm solves the shortest path after V-1 iterations in the worst case because **In a graph with no negative-weight cycles with V vertices, the shortest path between any two vertices has at most V-1 edges.**
 
+- In directed acyclic graph, topological sorted order is a linear ordering of vertices such that for every directed edge u -> v, vertex u comes before v in the ordering.
+![image](https://github.com/mhdslh/notes---Cplusplus/assets/61638154/765ce220-807a-49ae-9f66-5d5128d79835)
+
+
 - Heap with priority queue and priority queue with heap
 
 -----
