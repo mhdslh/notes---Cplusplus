@@ -148,6 +148,12 @@ Disjoint set does not modify its structure when connecting two vertices that are
 - In directed acyclic graph, topological sorted order is a linear ordering of vertices such that for every directed edge u -> v, vertex u comes before v in the ordering.
 ![image](https://github.com/mhdslh/notes---Cplusplus/assets/61638154/765ce220-807a-49ae-9f66-5d5128d79835)
 
+- Dynamic programming (DP) is based on the concept of **overlapping subproblems** and **optimal substructure**, where the original problem can be broken into similar smaller subproblems and the optimal solution can be formed from optimal solutions to the subproblems. To solve a DP problem
+  1) Identify a function or data structure that will compute/contain the answer to the problem for every given state (i.e., the original problem, but generalized for a given state).
+  2) Find a recurrence relation to transition between states.
+  3) Determine base cases, so that our recurrence relation doesn't go on infinitely.
+DP can be implemented either top-down or bottom-up. Bottom-up is implemented with iteration and starts at the base cases. Top-down is implemented with recursion and made efficient with memoization (caching).
+
 
 - Heap with priority queue and priority queue with heap
 
