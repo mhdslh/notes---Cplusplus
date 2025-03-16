@@ -126,7 +126,7 @@ Data Structures:
 
 - A binary search tree (BST) is a binary tree with properties: 1) The value in each node must be greater than (or equal to) any values stored in its left subtree. 2) The value in each node must be less than (or equal to) any values stored in its right subtree. Inorder traversal in BST will be in ascending order. BST is a good candidate to store data in order.
 
-- Singly-linked list ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/forward_list)) and Doubly-linked list  ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/list)):
+- Singly-linked list ([**std::forward_list**](https://en.cppreference.com/w/cpp/container/forward_list)) and Doubly-linked list  ([**std::list**](https://en.cppreference.com/w/cpp/container/list)):
 
 - Queue (FIFO) and Stack (LIFO):\
 [**std::queue**](https://en.cppreference.com/w/cpp/container/queue)\
