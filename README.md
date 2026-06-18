@@ -156,14 +156,14 @@ DP can be implemented either top-down or bottom-up. Bottom-up is implemented wit
 
 # Sorting Algorithms
 
-## Insertion Sort
+- Insertion Sort
 
 Insertion sort assumes that the subarray `arr[:n]` is already sorted and inserts `arr[n]` into its correct position so that `arr[:n+1]` becomes sorted. It does this by scanning backward through the sorted portion and shifting elements until the correct position is found for the new element.
 
 * **Time Complexity:** `O(n²)`
 * **Space Complexity:** `O(1)`
 
-## Merge Sort
+- Merge Sort
 
 Merge sort uses the **divide-and-conquer** approach.
 
@@ -172,7 +172,7 @@ The algorithm recursively divides the array into two halves, sorts each half, an
 * **Time Complexity:** `O(n log n)`
 * **Space Complexity:** `O(n)`
 
-## Quick Sort
+- Quick Sort
 
 Quick sort also follows the **divide-and-conquer** paradigm.
 
@@ -188,13 +188,13 @@ Because the pivot does not always split the array evenly, the running time depen
 * **Best/Average Case:** `O(n log n)`
 * **Worst Case:** `O(n²)`
 
-## Divide and Conquer
+- Divide and Conquer
 
 A common advantage of divide-and-conquer algorithms is that they break a problem into smaller subproblems and reduce redundant work, often leading to better performance.
 
 For example, when merging **k sorted arrays**, it is usually more efficient to repeatedly merge pairs of arrays (forming a balanced merge tree) rather than maintaining `k` pointers simultaneously.
 
-## Bucket Sort
+- Bucket Sort
 
 Bucket sort is useful when the range and distribution of input values are known.
 
