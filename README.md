@@ -154,10 +154,54 @@ Disjoint set does not modify its structure when connecting two vertices that are
   3) Determine base cases, so that our recurrence relation doesn't go on infinitely.
 DP can be implemented either top-down or bottom-up. Bottom-up is implemented with iteration and starts at the base cases. Top-down is implemented with recursion and made efficient with memoization (caching).
 
+# Sorting Algorithms
 
-- Heap with priority queue and priority queue with heap
+## Insertion Sort
 
------
-- erase in hashmap (iterators)
-- covariance
-- copy elision
+Insertion sort assumes that the subarray `arr[:n]` is already sorted and inserts `arr[n]` into its correct position so that `arr[:n+1]` becomes sorted. It does this by scanning backward through the sorted portion and shifting elements until the correct position is found for the new element.
+
+* **Time Complexity:** `O(n²)`
+* **Space Complexity:** `O(1)`
+
+## Merge Sort
+
+Merge sort uses the **divide-and-conquer** approach.
+
+The algorithm recursively divides the array into two halves, sorts each half, and then merges the sorted halves using a two-pointer technique.
+
+* **Time Complexity:** `O(n log n)`
+* **Space Complexity:** `O(n)`
+
+## Quick Sort
+
+Quick sort also follows the **divide-and-conquer** paradigm.
+
+It selects a **pivot** and partitions the array in place such that:
+
+* Elements to the left of the pivot are less than or equal to it.
+* Elements to the right of the pivot are greater than it.
+
+The algorithm then recursively applies the same process to each partition.
+
+Because the pivot does not always split the array evenly, the running time depends on the height of the recursion tree:
+
+* **Best/Average Case:** `O(n log n)`
+* **Worst Case:** `O(n²)`
+
+## Divide and Conquer
+
+A common advantage of divide-and-conquer algorithms is that they break a problem into smaller subproblems and reduce redundant work, often leading to better performance.
+
+For example, when merging **k sorted arrays**, it is usually more efficient to repeatedly merge pairs of arrays (forming a balanced merge tree) rather than maintaining `k` pointers simultaneously.
+
+## Bucket Sort
+
+Bucket sort is useful when the range and distribution of input values are known.
+
+The algorithm distributes elements into buckets based on their values and then combines the buckets (or sorts each bucket individually if necessary).
+
+Under favorable conditions, such as a known range and approximately uniform distribution, bucket sort can achieve:
+
+* **Time Complexity:** `O(n)` (average case)
+* **Space Complexity:** Depends on the number of buckets
+
